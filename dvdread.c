@@ -235,7 +235,7 @@ int main(int argc, char *argv[]) {
                     switch (p_buffer[0x23]) {
                         case 0x00:
                         case 0xC0: stripreg = 0; break;
-                        default:   stripreg = 1; break;
+                        default:   stripreg = 0; break;
                     };
                     ss_fprintf(&ss, s, file, curfile, 1, stderr,
                             "%sreg.mask 0x%02X\n",
