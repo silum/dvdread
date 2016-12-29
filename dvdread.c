@@ -174,6 +174,9 @@ int main(int argc, char *argv[]) {
         if (start && len) addfile(fname, start, len);
     }
     DVDClose(prdr);
+    for (int i = 0; i < nfiles; i++) {
+        fprintf(stderr, "%s: start=%d, end=%d\n", file[i].fname, file[i].start, file[i].end);
+    }
     /* Initialize libdvdcss */
     dvdcss = dvdcss_open(argv[1]);
     if (dvdcss == NULL) {
