@@ -166,10 +166,9 @@ int main(int argc, char *argv[]) {
             snprintf(fname, sizeof(fname),
                 "/VIDEO_TS/VTS_%02d_%d.VOB", t, v);
             start = UDFFindFile(prdr, fname, &len);
-            if (!start || !len) break;
+            if (!len) continue;
             addfile(fname, start, len);
         }
-        if (t != 0 && v == 0 && (!start || !len)) break;
         snprintf(fname, sizeof(fname), "/VIDEO_TS/VTS_%02d_0.BUP", t);
         start = UDFFindFile(prdr, fname, &len);
         if (start && len) addfile(fname, start, len);
